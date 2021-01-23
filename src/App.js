@@ -38,13 +38,3 @@ export default function App() {
     </div>
   );
 }
-
-// получает всё состояние приложения, возвращает обьект, что полижим свойствами возвращаемого
-// обьекта, то и будет пропсами компонента
-// const mapStateToProps = state => {
-//   return {
-//     contacts: state.contacts.items,
-//   };
-// };
-
-// export default connect(mapStateToProps, null)(App);

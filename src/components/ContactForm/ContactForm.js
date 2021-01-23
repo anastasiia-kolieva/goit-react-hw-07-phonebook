@@ -84,12 +84,3 @@ export default function ContactForm({ onCheckUnique }) {
     </form>
   );
 }
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     onSubmitData: newContact =>
-//       dispatch(actions.contactFormSubmithandler(newContact)),
-//   };
-// };
-
-// export default connect(null, mapDispatchToProps)(ContactForm);

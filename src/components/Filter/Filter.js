@@ -21,17 +21,3 @@ export default function Filter() {
     </>
   );
 }
-
-// const mapStateToProps = state => {
-//   return {
-//     value: state.contacts.filter,
-//   };
-// };
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     onChange: event => dispatch(actions.changeFilter(event.target.value)),
-//   };
-// };
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Filter);
