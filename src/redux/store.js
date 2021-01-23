@@ -1,19 +1,20 @@
 import { combineReducers } from 'redux';
 import { configureStore, createReducer } from '@reduxjs/toolkit';
-import actionTypes from './types';
+import * as actions from './actions';
+import actionsTypes from './types';
 
 const itemsReducer = createReducer([], {
   // это строка потому вычисляемое свойство объекта
-  [actionTypes.handelDeleteContact]: (state, action) =>
+  [actionsTypes.handelDeleteContact]: (state, action) =>
     state.filter(contact => contact.id !== action.payload),
-  contactFormSubmithandlerSuccess: (state, action) => [
+  [actions.contactFormSubmithandlerSuccess]: (state, action) => [
     ...state,
     action.payload,
   ],
 });
 
 const filterReducer = createReducer('', {
-  [actionTypes.changeFilter]: (_, action) => action.payload,
+  [actionsTypes.changeFilter]: (_, action) => action.payload,
 });
 
 const rootReducer = combineReducers({

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import s from '../ContactForm/ContactForm.module.css';
 import shortid from 'shortid';
-import * as actions from '../../redux/actions';
+import * as operations from '../../redux/operations';
 
 export default function ContactForm({ onCheckUnique }) {
   const [name, setName] = useState('');
@@ -33,7 +33,7 @@ export default function ContactForm({ onCheckUnique }) {
     }
 
     dispatch(
-      actions.contactFormSubmithandler({
+      operations.contactFormSubmithandler({
         id: shortid.generate(),
         name,
         number,
