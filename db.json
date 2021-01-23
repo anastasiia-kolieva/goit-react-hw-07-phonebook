@@ -1,3 +1,9 @@
 {
-    "contacts": []
-  }
+  "contacts": [
+    {
+      "id": "o8MqzDhKn",
+      "name": "boris",
+      "number": "111"
+    }
+  ]
+}

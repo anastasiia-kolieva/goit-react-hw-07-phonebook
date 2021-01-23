@@ -6,7 +6,7 @@ const itemsReducer = createReducer([], {
   // это строка потому вычисляемое свойство объекта
   [actionTypes.handelDeleteContact]: (state, action) =>
     state.filter(contact => contact.id !== action.payload),
-  [actionTypes.contactFormSubmithandler]: (state, action) => [
+  contactFormSubmithandlerSuccess: (state, action) => [
     ...state,
     action.payload,
   ],

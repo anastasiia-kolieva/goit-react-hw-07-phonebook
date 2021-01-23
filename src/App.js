@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import ContactForm from './components/ContactForm/ContactForm';
 import Filter from './components/Filter/Filter';
 import ContactList from './components/ContactList/ContactList';
-import { getContacts } from './redux/selectors';
+import { getContacts } from './redux/contacts-selectors';
 
 const stylesForWrapper = {
   width: '500px',
