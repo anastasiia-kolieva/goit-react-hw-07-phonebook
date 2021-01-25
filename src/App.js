@@ -1,8 +1,10 @@
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import ContactForm from './components/ContactForm/ContactForm';
 import Filter from './components/Filter/Filter';
 import ContactList from './components/ContactList/ContactList';
 import { getContacts } from './redux/contacts-selectors';
+import * as operations from './redux/operations';
 
 const stylesForWrapper = {
   width: '500px',
@@ -17,6 +19,11 @@ const stylesForTitles = {
 
 export default function App() {
   const contacts = useSelector(getContacts);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(operations.fetchContacts());
+  }, []);
 
   const handelCheckUniqueContact = name => {
     const isExistContact = !!contacts.find(contact => contact.name === name);

@@ -1,6 +1,15 @@
 import api from '../services/contacts-api';
 import * as actions from './actions';
 
+const fetchContacts = () => dispatch => {
+  dispatch(actions.fetchContactsRequest());
+
+  api
+    .fetchContacts()
+    .then(data => dispatch(actions.fetchContactsSuccess(data)))
+    .catch(error => dispatch(actions.fetchContactsError(error)));
+};
+
 // Action-creator- это функция, в которую передаются аргументы. А из себя она возвращает
 // функцию, которая получает dispatch(метод)
 // Прослойка thunk смотрит: если тип action=функция, то она эту функцию просто вызывает. Если нет, она
@@ -25,4 +34,4 @@ const handelDeleteContact = contactId => dispatch => {
     .catch(error => dispatch(actions.handelDeleteContactError(error)));
 };
 
-export { contactFormSubmithandler, handelDeleteContact };
+export { fetchContacts, contactFormSubmithandler, handelDeleteContact };

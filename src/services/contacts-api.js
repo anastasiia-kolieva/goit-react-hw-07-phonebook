@@ -5,8 +5,8 @@ async function fetchContacts() {
     const result = await fetch(`${BASE_URL}/contacts`);
     const data = result.json();
     return data;
-  } catch (err) {
-    throw err;
+  } catch (error) {
+    throw error;
   }
 }
 

@@ -1,6 +1,10 @@
 import { createAction } from '@reduxjs/toolkit';
 import actionsTypes from './types';
 
+const fetchContactsRequest = createAction('phonebook/fetchContactsRequest');
+const fetchContactsSuccess = createAction('phonebook/fetchContactsSuccess');
+const fetchContactsError = createAction('phonebook/fetchContactsError');
+
 const contactFormSubmithandlerRequest = createAction(
   'phonebook/contactFormSubmithandlerRequest',
 );
@@ -24,6 +28,9 @@ const handelDeleteContactError = createAction(
 const changeFilter = createAction(actionsTypes.changeFilter);
 
 export {
+  fetchContactsRequest,
+  fetchContactsSuccess,
+  fetchContactsError,
   contactFormSubmithandlerRequest,
   contactFormSubmithandlerSuccess,
   contactFormSubmithandlerError,
