@@ -2,7 +2,7 @@ const BASE_URL = 'http://localhost:4040/contacts';
 
 async function fetchContacts() {
   try {
-    const result = await fetch(`${BASE_URL}/contacts`);
+    const result = await fetch(`${BASE_URL}`);
     const data = result.json();
     return data;
   } catch (error) {
