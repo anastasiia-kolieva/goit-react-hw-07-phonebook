@@ -16,4 +16,13 @@ const contactFormSubmithandler = newContact => dispatch => {
     .catch(error => dispatch(actions.contactFormSubmithandlerError(error)));
 };
 
-export { contactFormSubmithandler };
+const handelDeleteContact = contactId => dispatch => {
+  dispatch(actions.handelDeleteContactRequest());
+
+  api
+    .deleteContacts(contactId)
+    .then(() => dispatch(actions.handelDeleteContactSuccess(contactId)))
+    .catch(error => dispatch(actions.handelDeleteContactError(error)));
+};
+
+export { contactFormSubmithandler, handelDeleteContact };

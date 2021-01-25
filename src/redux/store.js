@@ -5,7 +5,7 @@ import actionsTypes from './types';
 
 const itemsReducer = createReducer([], {
   // это строка потому вычисляемое свойство объекта
-  [actionsTypes.handelDeleteContact]: (state, action) =>
+  [actions.handelDeleteContactSuccess]: (state, action) =>
     state.filter(contact => contact.id !== action.payload),
   [actions.contactFormSubmithandlerSuccess]: (state, action) => [
     ...state,

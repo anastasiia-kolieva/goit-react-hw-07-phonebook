@@ -28,9 +28,24 @@ async function addContacts(newContactToAdd) {
   }
 }
 
+async function deleteContacts(contactId) {
+  const options = {
+    method: 'DELETE',
+  };
+
+  try {
+    const result = await fetch(`${BASE_URL}/${contactId}`, options);
+    const data = result.json();
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
 const api = {
   fetchContacts,
   addContacts,
+  deleteContacts,
 };
 
 export default api;
